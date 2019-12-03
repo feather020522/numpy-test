@@ -1,7 +1,5 @@
 # Sympy Test
 
-## 矩陣
-
 ---
 Symbolic mathematics with Sympy
 
