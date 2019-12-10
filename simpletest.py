@@ -9,6 +9,14 @@ Original file is located at
 
 import sympy as sym
 
+def custom_latex_printer(exp,**options):
+    from google.colab.output._publish import javascript
+    url = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=default"
+    javascript(url=url)
+    return sym.printing.latex(exp,**options)
+sym.init_printing(use_latex="mathjax",latex_printer=custom_latex_printer)
+# 讓他print出漂亮算式的方法
+
 a, b = sym.symbols('a, b')
 
 expr = (a + b) ** 2 
